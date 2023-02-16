@@ -1,0 +1,50 @@
+// Rahul has taken the loan from bank. Write the java code to calculate the compoud interest which is paybale to bank after the years.
+// if the principal amount is less than 0 than
+// return 0.0 if the rate of interest is less than 0 than
+// return 0.0 if the Time period is less than 0 than
+// return 0.0 if number of times interest compounded is less than 0 than
+// return 0.0
+
+// Input Format
+// Line 1: Enter the Principal: 15000 Line 2: Enter the Rate of interest: 8.77 
+// Line 3: Enter the Time period : 8 Enter number of times interest is compounded: 7
+
+// Constraints
+// principal amount, interest rate, year and number of times interest > 0
+
+// Output Format
+// Line 1: Compound Interest: 1646890.6976373557
+
+// code starts from here.
+
+import java.util.Scanner;
+
+class Solution {
+  public static void main(String[] args)
+  {
+    Scanner sc = new Scanner(System.in);
+
+    double principal = sc.nextDouble();
+
+    double rate = sc.nextDouble();
+
+   double time = sc.nextDouble();
+
+    int number = sc.nextInt();
+      
+      
+    if(number>0 && principal>0 && rate>0 && time>0)
+    {
+
+    double interest = principal * (Math.pow((1 + rate/100), (time * number))) - principal;
+
+    
+    System.out.println(interest);
+    }
+      else{
+          System.out.println("0.0");
+      }
+
+   
+  }
+}
