@@ -1,0 +1,32 @@
+// Rajesh is friend of Rahul. Rajesh visited to Rahul's house and then he got to know that Rahul is 
+// not well and having temprature 102 degree Fahrenheit. Rajesh is not able to understand the temprature in Fahrenheit so try to help him to covert it into Celsius.
+
+// Input Format
+// First Line will contain an integer representing to temprature in Fahrenheit
+
+// Constraints
+// Input will be integer value between 95 to 105
+
+// Output Format
+// one float value represnting in Celsius
+
+// code starts from here.
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int c=sc.nextInt();
+        if(c>=95 && c<=105)
+        {
+            System.out.print(((float)((int)(((float)(c-32)*5/9)*10)))/10);
+        }
+        else
+        {
+            System.out.print("Invalid");
+        }
+    }
+}
