@@ -1,0 +1,43 @@
+// Shruti and Priyanka are playing a game. Shruti gives two numbers in range of 0-127. 
+// Priyanka have to tell that whether first number can be converted to second number by 
+// applying left shift operator on the binary representation of first number. Help the priyanka to solve the problem.
+
+// Input Format
+// Two space seperated integer values in the range of 0 to 127.
+
+// Constraints
+// Input will be positive and in range of 0 to 127.
+
+// Output Format
+// Yes if number can be converted and No if cannot be converted.
+
+// code starts from here.
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int s1 = sc.nextInt();
+        int s2 = sc.nextInt();
+        if(s1>=0 && s1<=127 && s2>=0 && s2<=127){
+            int x = 2;
+            while (s1 <= s2) {
+                s1 = s1 * x;
+                if (s1 == s2) {
+                    System.out.println("Yes");
+                    return;
+                }
+            }
+            System.out.println("No");
+        }
+       
+        else{
+            System.out.print("Invalid Input");
+        }
+    }
+}
+
