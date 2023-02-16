@@ -1,0 +1,36 @@
+// Write a program to take the 3 inputs of integer type from the user.
+// Display the values separated by symbol ‘*’ if the values are positive otherwise display the message “Invalid Input”.
+
+// Input Format
+// Your program should take 3 inputs of integer type.
+
+// Constraints
+// Input should be positive integers
+
+// Output Format
+// Output should be the input values separated by ‘*‘ or “Invalid Input” message if any input is negative.
+
+// code starts from here.
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int a,b,c;
+        a=sc.nextInt();
+        b=sc.nextInt();
+        c=sc.nextInt();
+        if(a>0 && b>0 && c>0)
+        {
+            System.out.println(a+"*"+b+"*"+c);
+        }
+        else
+        {
+          System.out.println("Invalid Input");  
+        }
+    }
+}
+
