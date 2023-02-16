@@ -1,0 +1,62 @@
+// Shyam asked him frieds Venu to devlop a program which is use to perfome arithmetic operation.
+// He told that When I will enter two number and operator. It will perform operation based on given operator and result will display.
+
+// Input Format
+// Line 1: Enter number 1: 5 
+// Line 2: Enter number 2: 5 
+// Line 3: Enter operator : +
+
+// Constraints
+// number should be integer number.
+
+// Output Format
+// Result: 10
+
+// code starts from here.
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a,b;
+        
+        
+        a=sc.nextInt();
+        b=sc.nextInt();
+        
+        char op=sc.next().charAt(0);
+        
+        if(op=='+')
+        {
+            System.out.println(a+b);
+        
+        }
+        else if(op=='-')
+        {
+            System.out.println(a-b);
+        }
+        else if(op=='*')
+        {
+            System.out.println(a*b);
+        }
+        else if(op=='/')
+        {
+            System.out.println(a/b);
+        }
+        else if (op=='%')
+        {
+            System.out.println(a%b);
+        }
+       else
+        {
+            System.out.println("Invalid arithmetic operators");
+        }
+         
+        
+    }
+}
+
+
