@@ -1,0 +1,35 @@
+// John is asked to enter his tax amount (in decimals) in an application.
+// Write a program which will take the input from John.
+// If the value entered by him is a positive no., then convert it into integer and display it; otherwise display a message: “Invalid Input”.
+
+// Input Format
+// Program should take one input of double data type.
+
+// Constraints
+// Input should be positive no.; i.e. 0.00 <= n <= 32000.00
+
+// Output Format
+// If input given is a positive no.; then display its integer value; otherwise display the message: “Invalid Input”.
+
+// code starts from here.
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        double n;
+        int a;
+        n=sc.nextDouble();
+        
+        if (0.00<=n && n<=32000.00)
+        {
+            a=(int)n;
+            System.out.println(a);
+        }
+        else
+            System.out.println("Invalid Input");
+    }
+}
