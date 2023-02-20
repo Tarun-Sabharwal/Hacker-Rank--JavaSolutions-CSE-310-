@@ -1,0 +1,41 @@
+// Alice is asked to implement a Java program in which 3 integers X, Y are taken as input and all the numbers 
+// between X and Y (excluding X and Y) must be added and the sum is displayed as output. If there is no number in
+// between, in cases like Y is greater than X or both are equal, etc., NO OUTPUT should be displayed.
+
+// Input Format
+// two positive int numbers
+
+// Constraints
+// no negative or floating point numbers
+
+// Output Format
+// a int type positive number
+
+// code starts from here
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt() , y  = sc.nextInt();
+        if( x >= y){
+            System.out.println("NO OUTPUT");
+        }
+        else{
+            int sum;
+            if(x != 1){
+            sum = ((y*(y+1))/2) - ((x*(x+1))/2);
+            }
+            else
+                sum = ((y*(y+1))/2) - x;
+            
+            System.out.println(sum - y);
+                
+        }
+    }
+}
+
