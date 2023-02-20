@@ -1,0 +1,63 @@
+// Sajal and Ruhi are playing a game. Sajal is going to tell one number and one operation (Even, Odd, Prime and Factorial),
+// Ruhi have to apply the operation and tell the output.
+
+// Input Format
+// Two space seperated numbers, first number on which need to apply operation and second number will be 1 for checking the 
+// number is even or not, 2 for checking number is odd or not, 3 for checking number is prime or not and 4 for calculating factorial of number.
+
+// Constraints
+// First number will be positive integer value. Second number can be in range of 1 to 4.
+
+// Output Format
+// Yes / No for first three operations and an integer value if operation four is performed.
+
+// code starts from here
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt(), op = sc.nextInt();
+        switch(op){
+            
+        case 1: if( num % 2 ==  0)System.out.println("Yes");
+                    else
+                        System.out.println("No");
+        
+        break;
+        case 2: if(num%2 == 1)System.out.print("Yes");
+                else System.out.println("No");
+        
+        break;
+        case 3: boolean flag = true;
+                if(num <= 1){
+                    System.out.println("No");
+                    break;
+                }
+                for(int i =2 ; i <= num/2 ; i++){
+                    if(num%i == 0){
+                        flag = false;
+                        break;
+                    }
+                }
+                if(flag){
+                    System.out.println("Yes");
+                }
+                else    
+                    System.out.println("No");
+        break;
+        case 4: int fact = 1;
+                while(num > 1){
+                       fact = fact * num--;
+                }
+                System.out.println(fact);
+        break;
+        }
+    }
+}
+
+
