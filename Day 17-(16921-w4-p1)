@@ -1,0 +1,57 @@
+/* Write a program to convert the double type of array into int type array. If any value in the input array will be negative, 
+display the message “Invalid Array Elements” otherwise display the elements of int type converted array.
+
+Input Format
+Your program should take the two types of input. First input will represent size of array and second will represent the values of array.
+If the size of the array will be negative, display the message “Invalid Array Size” without asking any other input.
+
+Constraints
+1. Size of the array should be positive
+2. All the elements of the array should be positive
+
+Output Format
+If the size of the array will be negative, display the message “Invalid Array Size” without asking any other input.
+If all the input elements of the array are positive (including 0) then display the elements of int array otherwise display the message “Invalid Array Elements”.*/
+
+// code starts from here
+
+import java.util.Scanner;  
+public class Solution{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);  
+       int n=sc.nextInt();  
+        if(n<0){
+            System.out.println("Invalid Array Size");}
+        else{
+        double[] array = new double[n];  
+    
+        for(int i=0; i<n; i++){  
+            array[i]=sc.nextDouble();  
+        }  
+            int sum=1;
+            int z;
+            for(int i=0;i<n;i++){
+                if(array[i]<0){
+                    z=0;}
+                else{
+                    z=1;}  
+                sum=sum*z;   
+            }
+            
+            if(sum==0){
+                System.out.println("Invalid Array Elements");}
+           
+            else{
+                
+        for (int i=0; i<n; i++){
+            int m=(int)array[i];
+            System.out.println(m);  
+            
+        }
+        }
+        }
+        
+            
+    }  
+}
+
