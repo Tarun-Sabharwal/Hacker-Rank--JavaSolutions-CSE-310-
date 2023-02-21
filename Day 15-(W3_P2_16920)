@@ -1,0 +1,72 @@
+/* Jimmy has to develop a Kids Learning App as his mini-project of Java subject where any State name is 
+entered by the user and it displays the name of its capital as per the following list:
+
+Assam : Dispur
+Bihar : Patna
+Madhya Pradesh : Bhopal
+Manipur : Imphal
+Mizoram : Aizawl
+Sikkim : Gangtok
+Uttar Pradesh: Lucknow
+Uttarakhand : Dehradun
+
+If any other input is given, then the output must be No Record Found
+
+Help him to implement the logic using switch-case.
+
+Input Format
+Reads the name of the state
+**Example: **Manipur
+
+Constraints
+NA
+
+Output Format
+Prints the name of the Capital or No Record Found  */
+
+// code starts from here
+
+
+import java.util.*;
+public class StringSwitchDemo {  
+        
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        String month= sc.nextLine();
+        
+        String capital;
+
+        switch (month) {
+            case "Assam":
+                capital = "Dispur";
+                break;
+            case "Bihar":
+                capital = "Patna";
+                break;
+            case "Madhya Pradesh":
+                capital = "Bhopal";
+                break;
+            case "Manipur":
+                capital = "Imphal";
+                break;
+            case "Sikkim":
+                capital = "Gangtok";
+                break;
+            case "Uttar Pradesh":
+                capital = "Lucknow";
+                break;
+            case "Uttarakhand":
+                capital = "Dehradun";
+                break;
+            case "Mizoram":
+                capital = "Aizawl";
+                break;
+            default: 
+                capital = "No Record Found";
+                break;
+        }
+        System.out.println(capital);
+    }
+}
+
