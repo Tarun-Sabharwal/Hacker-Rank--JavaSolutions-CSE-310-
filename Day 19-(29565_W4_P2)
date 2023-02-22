@@ -1,0 +1,34 @@
+/*  write a program that creates integer array of n elements, accepts the values of arrays and find sum of elements as an integer.
+
+Input Format
+Accepts n values from the user.
+
+Constraints
+All number should be integer values (Positive, negative and zero)
+
+Output Format
+diplays the sum of the array's elements as a single integer.  */
+
+// code starts from here
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+            }
+        int sum=0;
+        for(int i=0;i<n;i++){
+            sum+=arr[i];
+        }
+        System.out.print(sum);
+        
+    }
+}
+
