@@ -1,0 +1,95 @@
+/*   My son Priyanshu got an assignment from his teacher to perform multiplication of complex number.
+Help him to complete his assignment. Write a java code with following features:
+class Name: Complex
+Instance Variable: real, imaginary (int type)
+Constructor: **
+1. Complex()
+2. Complex(int, int)
+
+**Instance Method:
+1. Mul_Complex(Complex, Complex)
+2. Display()
+Read the real and imaginary from user and pass to the constructor as parameter
+Write a separate class Test_Complex with a main() method and test the Complex class methods
+
+Input Format
+First line Read the complex number 1 for real and imaginary First line Read the complex number 2 for real and imaginary
+
+Constraints
+real, imaginary > 1
+
+Output Format
+Print the Result in form of complex number : a+bi  */
+
+// code starts from here
+
+import java.io.*;
+import java.util.*;
+
+class Complex {
+    int real;
+    int imaginary;
+
+    Complex(int r, int i) {
+        this.real = r;
+        this.imaginary = i;
+    }
+
+    void print() {
+        if (this.imaginary > 0) {
+            System.out.println(this.real + "+" + this.imaginary + "i");
+        } else if (this.imaginary == 0) {
+            System.out.println(this.real);
+        } else if (this.imaginary < 0) {
+            System.out.println(this.real + "-" + (-1) * this.imaginary + "i");
+        }
+    }
+
+    void multiply(Complex c2) {
+        int a1 = this.real * c2.real;
+        int a2 = this.real * c2.imaginary;
+        int a3 = this.imaginary * c2.real;
+        int a4 = (this.imaginary * c2.imaginary) * (-1);
+
+        this.real = a1 + a4;
+        this.imaginary = a2 + a3;
+    }
+}
+
+class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+        String[] s11 = s1.split(" ");
+        String[] s12 = s2.split(" ");
+        int real1 = 0;
+        int imaginary1 = 0;
+        int real2 = 0;
+        int imaginary2 = 0;
+
+        if (s11.length == 2) {
+            real1 = Integer.parseInt(s11[0]);
+            imaginary1 = Integer.parseInt(s11[1]);
+        } else if (s11.length == 1) {
+            real1 = Integer.parseInt(s11[0]);
+            imaginary1 = 0;
+        }
+        if (s12.length == 2) {
+            real2 = Integer.parseInt(s12[0]);
+            imaginary2 = Integer.parseInt(s12[1]);
+        } else if (s12.length == 1) {
+            real2 = Integer.parseInt(s12[0]);
+            imaginary2 = 0;
+        }
+
+        Complex c1 = new Complex(real1, imaginary1);
+        Complex c2 = new Complex(real2, imaginary2);
+
+        c1.multiply(c2);
+        c1.print();
+
+    }
+}
+
