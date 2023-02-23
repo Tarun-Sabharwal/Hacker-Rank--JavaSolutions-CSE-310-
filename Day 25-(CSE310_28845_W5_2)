@@ -1,0 +1,85 @@
+/*   It's PTM tomorrow in Cambridge School.Teachers want to show the grades from(A to E) depending on the percentage of the student.
+Help the teacher's by developing the program for the same.To find the grade of a student, given the marks of N subjects. Given
+the marks of N subjects, we have to print the grade of a student based on the following grade slab.
+
+If Percentage Marks > 90, Grade is A+ If 70 <= Percentage Marks <= 89, Grade is A If 60 <= Percentage Marks <= 69, 
+Grade is B If 50 <= Percentage Marks <= 59, Grade is C If Percentage Marks <= 40, Grade is D
+
+Input Format
+Integer Value to enter number of subjects, count Enter marks of subjects depending upon the the total number of subjects
+
+Constraints
+Number of subjects should not exceed 7
+
+Output Format
+Character output to show grades   */
+
+// code starts from here
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n =sc.nextInt();
+        if ( n <= 7){
+            int sum = 0;
+        int a = 0;
+        
+        int marks[] = new int[n];
+        for( int i= 0 ; i < n ; i++){
+            marks[i] = sc.nextInt();
+        }
+        
+        for( int x : marks){
+            sum += x;
+        }
+        
+        a =sum/n;
+        switch(( a > 90) ? 0 :
+        (a >= 70 && a <= 89) ? 1 :
+        (a >= 60 && a <= 69) ? 2 :
+        (a >= 50 && a <= 59) ? 3 :
+        (a <= 40) ? 4 : 5)
+        {
+
+
+        case 0:
+        System.out.println("A+");
+        break;
+
+        case 1:
+        System.out.println('A');
+        break;
+
+        case 2:
+        System.out.println('B');
+        break;
+
+        case 3:
+        System.out.println('C');
+        break;
+
+        case 4:
+        System.out.println('D');
+        break;
+
+        case 5:
+        System.out.println('E');
+        break;
+
+
+        }
+        }
+        else{
+            System.out.println("Invalid");
+        }
+    }
+}
+
