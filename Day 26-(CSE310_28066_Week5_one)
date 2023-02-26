@@ -1,0 +1,47 @@
+/*   WAP to accpet one array of stings and integers.and count the number of stings and integers present in the array.
+Example
+Input:
+First line Accept size of array
+second line accept all elements like Array = {"Raj", "77", "101", "99", "Jio"}
+
+Output:
+3
+2
+
+Input Format
+First line accept sixe of the array(n)
+second line accepts the n elements/values .
+
+Constraints
+the array is one string type array and
+n>0
+
+Output Format
+First line print the number of Integers present
+Second line prints the number of Strings present  */
+
+// code starts from here
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc =new Scanner(System.in);
+        int n =sc.nextInt();
+        sc.nextLine();
+        String  arr[] = new String[n];
+        for( int i = 0 ; i< n ; i++){
+            arr[i] = sc.next();
+        }
+        
+        int int_count =0;
+        for(int i = 0 ; i < n ; i++ ){
+            if(arr[i].charAt(0) >= 48 && arr[i].charAt(0) <= 57)int_count++;    
+        }
+        System.out.println(int_count+"\n"+(n - int_count));
+    }
+}
+
