@@ -1,0 +1,55 @@
+/*  Write a program to print the names of students by creating a Student class. If instead of name some other data type is passed then the name should
+be "Unknown", otherwise the name should be equal to the String value passed while creating object of Student class.
+
+Input Format
+Rahul 33
+
+Constraints
+Use constructor with argument to initialize the name
+Create an object with name to print the name of the student
+Pass Two inputs such as one is name and the other with different data type
+
+Output Format
+Rahul Unknown  */
+
+// code starts from here
+
+import java.io.*;
+import java.util.*;
+class Student {
+    String name ;
+    Student(String  str){
+        name =  str;
+    }
+    
+    Student(int a){
+        name ="Unknown";
+    }
+    
+    
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new  Scanner(System.in);
+        Student s1,s2;
+        var variable1 = sc.next();
+        try{
+            int val = Integer.parseInt(variable1);
+            s1 = new Student(1);
+        }catch(NumberFormatException e){
+            s1 = new Student(variable1);
+        }
+        
+        var variable2 = sc.next();
+        try{
+            int val = Integer.parseInt(variable2);
+            s2 = new Student(1);
+        }catch(NumberFormatException e){
+            s2 = new Student(variable2);
+        }
+        System.out.println(s1.name + "\n" + s2.name);
+    }
+}
+
