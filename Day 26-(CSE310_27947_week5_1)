@@ -1,0 +1,47 @@
+/*   Richa and her daughter Ahaana are playing a game. Richa is going to tell one number and Ahaana need to tell the prime factors of the number.
+Help Ahaana by completing the code to find prime factor of the number. Write a method which calculate prime factors and print and call the method in main.
+
+Input Format
+An integer value
+
+Constraints
+N will be lie between 10-50
+
+Output Format
+All the prime factors will be printed exectly once with space.   */
+
+
+// code starts from here
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    static void findPrime(int n){
+        for(int i = 2 ; i <= n ; i++){
+            boolean flag = true;
+            if(n%i == 0){
+            
+                for( int j =2 ; j < i; j++){
+                    if(i%j == 0){
+                        flag =false;
+                        break;
+                    }
+                }
+                if(flag)System.out.print(i+" ");
+            }
+        }
+    }
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int val = sc.nextInt();
+        if(  val > 10  &&  val < 50){
+            findPrime(val);
+        }
+        else{
+            System.out.println("Invalid Input");
+        }
+    }
+}
+
