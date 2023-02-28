@@ -1,0 +1,44 @@
+/*  Chacha Chaudhary has asked Sheena to find out the Nth occurence of any Word in the Paragraph.
+Sheena finds it a tedious task to find Nth occurence so she wants you to write a small java program which can solve her problem and 
+she will give you a gift for helping her. Let us write a code.
+
+Input Format
+First line reads the paragraph contents
+Second line reads the word to be found and N separated by Space
+
+Constraints
+N>0
+
+Output Format
+Prints the starting index of the Nth occurence of the word in the paragraph
+Prints Not Present if not occuring even a single time and prints the last occurence if occuring less than N times. */
+
+// code starts from here
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        String text = sc.nextLine();
+        String pattern = sc.next();
+        int index = sc.nextInt();
+        int start = 0;
+        for( int i = 0 ; i  < index ;i++){
+            if(text.indexOf(pattern,start) == -1)break;
+            start = text.indexOf(pattern,start) + 1;
+        }
+        switch(start){
+            case 0:
+                System.out.println("Not Present");
+                break; 
+            default:
+                System.out.println(start -1 );    
+        }
+                
+    }
+}
+
