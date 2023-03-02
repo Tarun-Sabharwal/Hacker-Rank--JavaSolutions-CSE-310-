@@ -1,0 +1,31 @@
+/*  Ram was writing the essay and by mistakely he wrote in past continue tense inspite of present continue tense so write a program by using String
+class method to replace all.
+
+Input Format
+This was a beautiful Flower.
+
+Constraints
+All the sentences should be is the past continue sentences only.
+
+Output Format
+This is a beautiful Flower  */
+
+// code starts fromm here
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        if(str.contains("was") || str.contains("were")){
+            System.out.println(str.replace("was","is").replace("were","are"));
+        }
+        else 
+            System.out.println("Invalid");
+    }
+}
+
