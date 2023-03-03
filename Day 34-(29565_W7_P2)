@@ -1,0 +1,58 @@
+/*  Kumar has been given a string and asked to determine whether it can be converted into a palindrome after removing at most one character
+
+Input Format
+str="abcbea"
+
+Constraints
+1<=Str.length<=10^3 Str consists of Lowercase English characters
+
+Output Format
+true  */
+
+// code starts from here
+
+import java.util.Scanner;
+
+public class Palindrome {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        
+        
+        if(isPalindrome(str)) {
+            System.out.println("true");
+            return;
+        }
+        
+        
+        for(int i = 0; i < str.length(); i++) {
+            String newStr = removeCharAt(str, i);
+            if(isPalindrome(newStr)) {
+                System.out.println("true");
+                return;
+            }
+        }
+        
+        System.out.println("false");
+    }
+    
+    private static boolean isPalindrome(String str) {
+        int i = 0, j = str.length() - 1;
+        while(i < j) {
+            if(str.charAt(i) != str.charAt(j)) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+    
+    private static String removeCharAt(String str, int index) {
+        StringBuilder sb = new StringBuilder(str);
+        sb.deleteCharAt(index);
+        return sb.toString();
+    }
+}
+
+
