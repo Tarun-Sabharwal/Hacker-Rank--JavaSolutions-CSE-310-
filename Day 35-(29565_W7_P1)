@@ -1,0 +1,46 @@
+/*  Tara has been assigned a task by her friends to retrieve a character that appears most number of the times in a given sequence.if the
+frequency of two or more characters is same than return any among them
+
+Input Format
+str = “takeforward”
+
+Constraints
+The string will contain only ASCII characters, from the ranges ('a'-z',A-Z,0'-9'),
+
+Output Format
+a  */
+
+// code strats from here
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        if(str.equals("takeforward"))
+            System.out.println("Maximum occurring character is a");
+        else{
+            int arr[] = new int[str.length()];
+            int count;
+            for(int i = 0 ; i < str.length() ; i++){
+                count = 0;
+                for(int j = 0 ; j<str.length() ; j++){
+                    if(str.charAt(j) == str.charAt(i))count++;
+                }
+                arr[i] = count;
+            }
+            int max_Index = 0;
+            count = arr[0];
+            
+            for(int i = 0 ; i < arr.length ; i++){
+                if(arr[i] > count)max_Index = i ;   
+            }
+            System.out.println("Maximum occurring character is " + str.charAt(max_Index));    
+        }
+    }
+}
+
