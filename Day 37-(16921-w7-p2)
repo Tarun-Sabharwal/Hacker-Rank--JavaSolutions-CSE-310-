@@ -1,0 +1,41 @@
+/*  Write a program to take the input of String and display all the characters present in the input string in sorted order with their count.
+If the length of the string will be less than equal to 5, display the message “Invalid Input”.
+
+Input Format
+Your program should take the input of one string.
+
+Constraints
+Length of strings should be greater than 5.
+
+Output Format
+Your program should display the characters present in the string in sorted order with their count.  */
+
+// code strats from here
+
+import java.io.*;
+import java.util.*;
+public class SortCharacters {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String str = input.next();
+        
+        if (str.length() <= 5) {
+            System.out.println("Invalid Input");
+            return;
+        }
+        
+        char[] chars = str.toCharArray();
+        Arrays.sort(chars);
+        
+        int count = 1;
+        for (int i = 0; i < chars.length; i++) {
+            if (i < chars.length - 1 && chars[i] == chars[i+1]) {
+                count++;
+            } else {
+                System.out.print(chars[i] + "" + count);
+                count = 1;
+            }
+        }
+    }
+}
+
