@@ -1,0 +1,39 @@
+/*   Write a program to take "n" String inputs from user and store them in array (where "n" is no. of String objects specified by user at run-time).
+Sort the array in ascending order and display the array. If "n" entered by user is less than 2, then display message "Invalid".
+
+Input Format
+Your program should take the input of "n" string objects.
+
+Constraints
+No. of string objects entered by the user should be greater than 1.
+
+Output Format
+Your program should display the array of strings in sorted ascending order.   */
+
+// code strats from here
+
+import java.io.*;
+import java.util.*;
+import java.util.Arrays;
+public class SortStrings {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        
+        if (n < 2) {
+            System.out.println("Invalid");
+            return;
+        }
+        
+        String[] strings = new String[n];
+        for (int i = 0; i < n; i++) {
+            strings[i] = input.next();
+        }
+        
+        Arrays.sort(strings);
+        for (String s : strings) {
+            System.out.println(s);
+        }
+    }
+}
+
